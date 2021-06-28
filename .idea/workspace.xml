@@ -30,7 +30,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -69,6 +69,10 @@
       <workItem from="1621342565199" duration="8935000" />
       <workItem from="1621591073796" duration="11843000" />
       <workItem from="1621621672459" duration="1262000" />
+      <workItem from="1623663870792" duration="491000" />
+      <workItem from="1623664491148" duration="696000" />
+      <workItem from="1623665617304" duration="402000" />
+      <workItem from="1623679922756" duration="134000" />
     </task>
     <servers />
   </component>
