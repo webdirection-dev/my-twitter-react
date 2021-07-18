@@ -78,3 +78,48 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
+
+// Обработчики событий
+// class WhoAmI extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             years: 26,
+//             nationality: 'ur'
+//         }
+//         this.nextYear = this.nextYear.bind(this)
+//     }
+//
+//     nextYear() {
+//         this.setState(state => ({
+//             years: ++state.years
+//         }))
+//     }
+//
+//     render() {
+//         const {name, surname, link} = this.props;
+//         const {years} = this.state;
+//         return (
+//             <React.Fragment>
+//                 <button onClick={this.nextYear}>++</button>
+//                 <h1>My name is {name}, surname - {surname}, years = {years}</h1>
+//                 <a href={link}>My profile</a>
+//             </React.Fragment>
+//         )
+//     }
+// }
+//
+// const All = () => {
+//     return(
+//         <>
+//             <WhoAmI name='Anton' surname='Petrov' link='#'/>
+//             <WhoAmI name='Jhon' surname='Doe' link='#'/>
+//             <WhoAmI name='Ivan' surname='Smith' link='#'/>
+//         </>
+//     )
+// };
+//
+// ReactDOM.render(
+//     <All />,
+//     document.getElementById('root')
+// );

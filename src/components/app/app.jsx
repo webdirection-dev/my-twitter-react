@@ -8,27 +8,141 @@ import SearchPanel from "../search-panel";
 import PostList from "../post-list";
 import PostAddForm from "../post-add-form";
 
-import './app.css';
+// import style from './App.module.scss';
+// import './app.css';
+import styled from 'styled-components';
 
-const App = () => {
+const AppBlock = styled.div`
+  margin: 0 auto;
+  max-width: 800px;
+`;
 
-    const dataCards = [
-        { label: 'Going to learn React', important: true, id: 'as3dd4' },
-        { label: 'That is so funny', important: false, id: 'addsds2' },
-        { label: 'I need a break...', important: false, id: 'w3dggggs' }
-    ];
+const StyledAppBlock = styled(AppBlock)`
+  background-color: grey;
+`
 
-    return (
-        <div className='app'>
-            <AppHeader />
-            <div className='search-panel d-flex'>
-                <SearchPanel />
-                <PostStatusFilter />
-            </div>
-            <PostList posts={dataCards}/>
-            <PostAddForm />
-        </div>
-    )
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.postsId = 0;
+
+        this.randomMumId = () => {
+            return +(++this.postsId + +Math.random()).toString().replace(/\./, '');
+        };
+
+        this.state = {
+            dataCards: [
+                { label: 'Going to learn React', important: false, like: false, id: this.randomMumId() },
+                { label: 'That is so funny', important: false, like: false, id: this.randomMumId() },
+                { label: 'I need a break...', important: false, like: false, id: this.randomMumId() }
+            ]
+        };
+
+        this.deleteItem = this.deleteItem.bind(this);
+        this.addItem = this.addItem.bind(this);
+        this.onToggleImportant = this.onToggleImportant.bind(this);
+        this.onToggleLiked = this.onToggleLiked.bind(this);
+    }
+
+    deleteItem(idDeletetCard) {
+        this.postsId--;
+        this.setState(({dataCards}) => {
+            // Вариант I
+            // const index = dataCards.findIndex(elem => elem.id === idDeletetCard);
+            // const before = dataCards.slice(0, index);
+            // const after = dataCards.slice(index+1);
+            // const newArr = [...before, ...after]
+
+            // Вариант II
+            const newArr = [];
+
+            // всегда глубокая копия state иначе ошибки
+            JSON.parse(JSON.stringify(dataCards)).forEach(item => {
+                if (item.id !== idDeletetCard) newArr.push(item);
+            });
+
+            return {
+                dataCards: newArr
+            }
+        });
+    }
+
+    addItem(body) {
+        const newItem = {
+            label: body,
+            important: false,
+            id: this.randomMumId()
+        };
+
+        this.setState(({dataCards}) => {
+            const newArr = [...dataCards, newItem];
+            return {
+                dataCards: newArr
+            };
+        });
+    }
+
+    onToggleImportant(id) {
+        this.setState(({dataCards}) => {
+            // всегда глубокая копия state иначе ошибки
+            const newArr =
+                JSON.parse(JSON.stringify(dataCards))
+                .map(item => {
+                    if (item.id === id) {
+                        item.important = !item.important;
+                        return item;
+                    } else return  item;
+                });
+
+            return {
+                dataCards: newArr
+            }
+        });
+    }
+
+    onToggleLiked(id) {
+        this.setState(({dataCards}) => {
+            // Вариант I
+            // const index = dataCards.findIndex(item => item.id === id);
+            // const old = dataCards[index]
+            // const newItem = {...old, like: !old.like}
+            // const newArr = [...dataCards.slice(0, index), newItem, ...dataCards.slice(index +1)];
+
+            // Вариант II
+            // всегда глубокая копия state иначе ошибки
+            const newArr =
+                JSON.parse(JSON.stringify(dataCards))
+                    .map(item => {
+                        if (item.id === id) {
+                            item.like = !item.like;
+                            return item;
+                        } else return  item;
+                    });
+
+            return {
+                dataCards: newArr
+            }
+        });
+    }
+
+    render() {
+        return (
+            <AppBlock>
+                <AppHeader />
+                <div className='search-panel d-flex'>
+                    <SearchPanel />
+                    <PostStatusFilter />
+                </div>
+                <PostList
+                    posts = {this.state.dataCards}
+                    deleteCardById = {this.deleteItem}
+                    onToggleImportant = {this.onToggleImportant}
+                    onToggleLiked = {this.onToggleLiked}
+                />
+                <PostAddForm
+                    onAddCard = {this.addItem}
+                />
+            </AppBlock>
+        )
+    }
 }
-
-export default App;
