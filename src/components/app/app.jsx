@@ -42,6 +42,8 @@ export default class App extends React.Component {
         this.addItem = this.addItem.bind(this);
         this.onToggleImportant = this.onToggleImportant.bind(this);
         this.onToggleLiked = this.onToggleLiked.bind(this);
+
+        this.changeStateForCard = this.changeStateForCard.bind(this);
     }
 
     deleteItem(idDeletetCard) {
@@ -82,39 +84,14 @@ export default class App extends React.Component {
         });
     }
 
-    onToggleImportant(id) {
+    changeStateForCard(id, elem) {
         this.setState(({dataCards}) => {
             // всегда глубокая копия state иначе ошибки
             const newArr =
                 JSON.parse(JSON.stringify(dataCards))
-                .map(item => {
-                    if (item.id === id) {
-                        item.important = !item.important;
-                        return item;
-                    } else return  item;
-                });
-
-            return {
-                dataCards: newArr
-            }
-        });
-    }
-
-    onToggleLiked(id) {
-        this.setState(({dataCards}) => {
-            // Вариант I
-            // const index = dataCards.findIndex(item => item.id === id);
-            // const old = dataCards[index]
-            // const newItem = {...old, like: !old.like}
-            // const newArr = [...dataCards.slice(0, index), newItem, ...dataCards.slice(index +1)];
-
-            // Вариант II
-            // всегда глубокая копия state иначе ошибки
-            const newArr =
-                JSON.parse(JSON.stringify(dataCards))
-                    .map(item => {
+                    .map((item) => {
                         if (item.id === id) {
-                            item.like = !item.like;
+                            item[elem] = !item[elem];
                             return item;
                         } else return  item;
                     });
@@ -125,10 +102,56 @@ export default class App extends React.Component {
         });
     }
 
+    onToggleImportant(id) {
+        this.changeStateForCard(id, 'important')
+    }
+
+    onToggleLiked(id) {
+        // Вариант I
+        // this.setState(({dataCards}) => {
+        //     // Вариант I
+        //     // const index = dataCards.findIndex(item => item.id === id);
+        //     // const old = dataCards[index]
+        //     // const newItem = {...old, like: !old.like}
+        //     // const newArr = [...dataCards.slice(0, index), newItem, ...dataCards.slice(index +1)];
+        //
+        //     // Вариант II
+        //     // всегда глубокая копия state иначе ошибки
+        //     const newArr =
+        //         JSON.parse(JSON.stringify(dataCards))
+        //             .map(item => {
+        //                 if (item.id === id) {
+        //                     item.like = !item.like;
+        //                     return item;
+        //                 } else return  item;
+        //             });
+        //
+        //     return {
+        //         dataCards: newArr
+        //     }
+        // });
+        // Вариант II
+        this.changeStateForCard(id, 'like')
+    }
+
     render() {
+        // Вариант I
+        const {dataCards} = this.state;
+        const allPosts = dataCards.length;
+        const likedPostCurrentCount = dataCards.filter(item => item.like).length;
+
+        // Вариант II
+        // const allPosts = this.state.dataCards.length;
+        // const likedPostCurrentCount = this.state.dataCards.filter(item => {
+        //     return item.like === true;
+        // }).length;
+
         return (
             <AppBlock>
-                <AppHeader />
+                <AppHeader
+                    allPosts = {allPosts}
+                    likedPostCurrentCount = {likedPostCurrentCount}
+                />
                 <div className='search-panel d-flex'>
                     <SearchPanel />
                     <PostStatusFilter />
