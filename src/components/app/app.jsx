@@ -32,16 +32,22 @@ export default class App extends React.Component {
 
         this.state = {
             dataCards: [
-                { label: 'Going to learn React', important: false, like: false, id: this.randomMumId() },
-                { label: 'That is so funny', important: false, like: false, id: this.randomMumId() },
+                { label: 'Going to learn React', important: true, like: false, id: this.randomMumId() },
+                { label: 'That is so funny', important: false, like: true, id: this.randomMumId() },
                 { label: 'I need a break...', important: false, like: false, id: this.randomMumId() }
-            ]
+            ],
+            term: '',
+            filter: 'all'
         };
 
         this.deleteItem = this.deleteItem.bind(this);
         this.addItem = this.addItem.bind(this);
         this.onToggleImportant = this.onToggleImportant.bind(this);
         this.onToggleLiked = this.onToggleLiked.bind(this);
+        this.searchPost = this.searchPost.bind(this);
+        this.onUpdateSearch = this.onUpdateSearch.bind(this);
+        this.filterPost = this.filterPost.bind(this);
+        this.onFilterSelect = this.onFilterSelect.bind(this);
 
         this.changeStateForCard = this.changeStateForCard.bind(this);
     }
@@ -134,12 +140,33 @@ export default class App extends React.Component {
         this.changeStateForCard(id, 'like')
     }
 
-    render() {
-        // Вариант I
-        const {dataCards} = this.state;
-        const allPosts = dataCards.length;
-        const likedPostCurrentCount = dataCards.filter(item => item.like).length;
+    searchPost(items, term) {
+        if (term.length === 0) return items;
 
+        return items.filter((item) => item.label.indexOf(term) > -1);
+    }
+
+    onUpdateSearch(term) {
+        this.setState({term: term});
+    }
+
+    filterPost(items, filter) {
+        if (filter === 'like') return items.filter(item => item.like);
+        else return items;
+    }
+
+    onFilterSelect (filter) {
+        this.setState({filter: filter});
+
+    }
+
+    render() {
+        const {dataCards, term, filter} = this.state;
+
+        const visiblePosts = this.filterPost(this.searchPost(dataCards, term), filter);
+        const allPosts = dataCards.length;
+        // Вариант I
+        const likedPostCurrentCount = dataCards.filter(item => item.like).length;
         // Вариант II
         // const allPosts = this.state.dataCards.length;
         // const likedPostCurrentCount = this.state.dataCards.filter(item => {
@@ -153,11 +180,17 @@ export default class App extends React.Component {
                     likedPostCurrentCount = {likedPostCurrentCount}
                 />
                 <div className='search-panel d-flex'>
-                    <SearchPanel />
-                    <PostStatusFilter />
+                    <SearchPanel
+                        onUpdateSearch={this.onUpdateSearch}
+                    />
+                    <PostStatusFilter
+                        filter={filter}
+                        onFilterSelect={this.onFilterSelect}
+                    />
                 </div>
                 <PostList
-                    posts = {this.state.dataCards}
+                    // posts = {this.state.dataCards}
+                    posts = {visiblePosts}
                     deleteCardById = {this.deleteItem}
                     onToggleImportant = {this.onToggleImportant}
                     onToggleLiked = {this.onToggleLiked}
