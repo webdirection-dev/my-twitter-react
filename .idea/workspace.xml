@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -36,12 +36,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Desktop" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/build" />
       <recent name="$PROJECT_DIR$/src/components/post-add-form" />
       <recent name="$PROJECT_DIR$/src/components/post-list-item" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/components/post-list" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.test.js">
@@ -88,6 +91,8 @@
       <workItem from="1626545897970" duration="464000" />
       <workItem from="1626609437100" duration="33334000" />
       <workItem from="1626695193254" duration="7850000" />
+      <workItem from="1626902509638" duration="728000" />
+      <workItem from="1626910002052" duration="1496000" />
     </task>
     <servers />
   </component>
