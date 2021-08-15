@@ -17,6 +17,10 @@
       </list>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1si3YztMwJeHt9ONquQOoXDr3Vo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -95,7 +99,7 @@
       <workItem from="1626902509638" duration="728000" />
       <workItem from="1626910002052" duration="1496000" />
       <workItem from="1626957808404" duration="3000" />
-      <workItem from="1629060429392" duration="359000" />
+      <workItem from="1629060429392" duration="2943000" />
     </task>
     <servers />
   </component>
