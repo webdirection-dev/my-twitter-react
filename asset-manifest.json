@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/my-twitter-react-app/static/css/main.12de82b1.chunk.css",
-    "main.js": "/my-twitter-react-app/static/js/main.6038c3c2.chunk.js",
-    "main.js.map": "/my-twitter-react-app/static/js/main.6038c3c2.chunk.js.map",
-    "runtime-main.js": "/my-twitter-react-app/static/js/runtime-main.da04e61e.js",
-    "runtime-main.js.map": "/my-twitter-react-app/static/js/runtime-main.da04e61e.js.map",
-    "static/css/2.27dd871e.chunk.css": "/my-twitter-react-app/static/css/2.27dd871e.chunk.css",
-    "static/js/2.8e73eaa1.chunk.js": "/my-twitter-react-app/static/js/2.8e73eaa1.chunk.js",
-    "static/js/2.8e73eaa1.chunk.js.map": "/my-twitter-react-app/static/js/2.8e73eaa1.chunk.js.map",
-    "index.html": "/my-twitter-react-app/index.html",
-    "static/css/2.27dd871e.chunk.css.map": "/my-twitter-react-app/static/css/2.27dd871e.chunk.css.map",
-    "static/css/main.12de82b1.chunk.css.map": "/my-twitter-react-app/static/css/main.12de82b1.chunk.css.map",
-    "static/js/2.8e73eaa1.chunk.js.LICENSE.txt": "/my-twitter-react-app/static/js/2.8e73eaa1.chunk.js.LICENSE.txt"
+    "main.css": "/webdirection-dev/my-twitter-react-infra/static/css/main.12de82b1.chunk.css",
+    "main.js": "/webdirection-dev/my-twitter-react-infra/static/js/main.6038c3c2.chunk.js",
+    "main.js.map": "/webdirection-dev/my-twitter-react-infra/static/js/main.6038c3c2.chunk.js.map",
+    "runtime-main.js": "/webdirection-dev/my-twitter-react-infra/static/js/runtime-main.565601dc.js",
+    "runtime-main.js.map": "/webdirection-dev/my-twitter-react-infra/static/js/runtime-main.565601dc.js.map",
+    "static/css/2.27dd871e.chunk.css": "/webdirection-dev/my-twitter-react-infra/static/css/2.27dd871e.chunk.css",
+    "static/js/2.4743a829.chunk.js": "/webdirection-dev/my-twitter-react-infra/static/js/2.4743a829.chunk.js",
+    "static/js/2.4743a829.chunk.js.map": "/webdirection-dev/my-twitter-react-infra/static/js/2.4743a829.chunk.js.map",
+    "index.html": "/webdirection-dev/my-twitter-react-infra/index.html",
+    "static/css/2.27dd871e.chunk.css.map": "/webdirection-dev/my-twitter-react-infra/static/css/2.27dd871e.chunk.css.map",
+    "static/css/main.12de82b1.chunk.css.map": "/webdirection-dev/my-twitter-react-infra/static/css/main.12de82b1.chunk.css.map",
+    "static/js/2.4743a829.chunk.js.LICENSE.txt": "/webdirection-dev/my-twitter-react-infra/static/js/2.4743a829.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.da04e61e.js",
+    "static/js/runtime-main.565601dc.js",
     "static/css/2.27dd871e.chunk.css",
-    "static/js/2.8e73eaa1.chunk.js",
+    "static/js/2.4743a829.chunk.js",
     "static/css/main.12de82b1.chunk.css",
     "static/js/main.6038c3c2.chunk.js"
   ]
