@@ -2,7 +2,7 @@
   "name": "start-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://webdirection-dev.github.io/my-twitter-react-app/",
+  "homepage": "https://webdirection-dev.github.io/my-twitter-react-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
