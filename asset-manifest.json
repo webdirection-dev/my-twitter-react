@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "./my-twitter-react-infra/static/css/main.12de82b1.chunk.css",
-    "main.js": "./my-twitter-react-infra/static/js/main.6038c3c2.chunk.js",
-    "main.js.map": "./my-twitter-react-infra/static/js/main.6038c3c2.chunk.js.map",
-    "runtime-main.js": "./my-twitter-react-infra/static/js/runtime-main.9f16839e.js",
-    "runtime-main.js.map": "./my-twitter-react-infra/static/js/runtime-main.9f16839e.js.map",
-    "static/css/2.27dd871e.chunk.css": "./my-twitter-react-infra/static/css/2.27dd871e.chunk.css",
-    "static/js/2.f8d46cd8.chunk.js": "./my-twitter-react-infra/static/js/2.f8d46cd8.chunk.js",
-    "static/js/2.f8d46cd8.chunk.js.map": "./my-twitter-react-infra/static/js/2.f8d46cd8.chunk.js.map",
-    "index.html": "./my-twitter-react-infra/index.html",
-    "static/css/2.27dd871e.chunk.css.map": "./my-twitter-react-infra/static/css/2.27dd871e.chunk.css.map",
-    "static/css/main.12de82b1.chunk.css.map": "./my-twitter-react-infra/static/css/main.12de82b1.chunk.css.map",
-    "static/js/2.f8d46cd8.chunk.js.LICENSE.txt": "./my-twitter-react-infra/static/js/2.f8d46cd8.chunk.js.LICENSE.txt"
+    "main.css": "/webdirection-dev/static/css/main.12de82b1.chunk.css",
+    "main.js": "/webdirection-dev/static/js/main.6038c3c2.chunk.js",
+    "main.js.map": "/webdirection-dev/static/js/main.6038c3c2.chunk.js.map",
+    "runtime-main.js": "/webdirection-dev/static/js/runtime-main.b6c09d95.js",
+    "runtime-main.js.map": "/webdirection-dev/static/js/runtime-main.b6c09d95.js.map",
+    "static/css/2.27dd871e.chunk.css": "/webdirection-dev/static/css/2.27dd871e.chunk.css",
+    "static/js/2.1df5280a.chunk.js": "/webdirection-dev/static/js/2.1df5280a.chunk.js",
+    "static/js/2.1df5280a.chunk.js.map": "/webdirection-dev/static/js/2.1df5280a.chunk.js.map",
+    "index.html": "/webdirection-dev/index.html",
+    "static/css/2.27dd871e.chunk.css.map": "/webdirection-dev/static/css/2.27dd871e.chunk.css.map",
+    "static/css/main.12de82b1.chunk.css.map": "/webdirection-dev/static/css/main.12de82b1.chunk.css.map",
+    "static/js/2.1df5280a.chunk.js.LICENSE.txt": "/webdirection-dev/static/js/2.1df5280a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9f16839e.js",
+    "static/js/runtime-main.b6c09d95.js",
     "static/css/2.27dd871e.chunk.css",
-    "static/js/2.f8d46cd8.chunk.js",
+    "static/js/2.1df5280a.chunk.js",
     "static/css/main.12de82b1.chunk.css",
     "static/js/main.6038c3c2.chunk.js"
   ]
